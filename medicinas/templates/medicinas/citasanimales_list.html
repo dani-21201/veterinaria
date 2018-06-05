@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block section %}
+     <h1><p  style="color:#C28711;" class="text-success"> <strong>Citas Mascotas</strogn></p></h1>
+    <hr>
+{% endblock section %}
+
+{% block maincontent %}
+    <div class="row well">
+        {% for p in object_list.all %}
+            <div class="table-responsive">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{ p.nombreMascota }}</h3>
+                    </div>      
+
+                </div>
+                <div class="panel-heading">
+                        <h3 class="panel-title">{{ p.tipodecita }}</h3>
+                    </div>  
+            </div>
+        {% endfor %}
+    </div>
+{% endblock maincontent %}

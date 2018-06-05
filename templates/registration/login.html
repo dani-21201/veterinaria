@@ -1,0 +1,58 @@
+{% load i18n %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+<form method="post" action="">
+    {% csrf_token %}
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+<!--Pulling Awesome Font -->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<body style="background: -webkit-linear-gradient(red, blue); /* For Safari 5.1 to 6.0 */
+background: -o-linear-gradient(red, blue); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(red, blue); /* For Firefox 3.6 to 15 */
+background: linear-gradient(red, blue); /* Standard syntax */">
+</body>
+<center> <h1>
+    <strong><font face="Purisa">Bienvenidos a mi página web</font>
+    </strong></h1>
+    </center>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-5 col-md-3">
+            <div class="form-login">
+           
+          
+            <input type="text" name="username" id="id_username" class="form-control input-sm chat-input" placeholder="id_username" />
+            </br>
+            <input type="password" name="password"  id="id_password" class="form-control input-sm chat-input" placeholder="id_password" />
+            </br>
+           
+            </div>
+        
+        </div>
+    </div>
+</div>
+<div class="wrapper">
+    <span class="group-btn">  
+        <center>
+    <input   class="btn btn-primary btn-md"type="submit" value="{% trans 'Log in' %}" />
+    </span>
+    </div>
+
+    <input type="hidden" name="next" value="{{ next }}" />
+</form>
+<center>
+
+<p>{% trans "Forgot your password?" %} <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>.</p>
+<p>{% trans "Not a member?" %} <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>.</p>
+</center>
+</center>
+{% endblock %}

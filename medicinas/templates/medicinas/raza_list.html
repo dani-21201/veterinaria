@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block section %}
+    <h1><p class="text-danger"> <strong>Razas Mascotas</strogn></p></h1>
+    <hr>
+{% endblock section %}
+
+{% block maincontent %}
+    <div class="row well">
+        {% for p in object_list.all %}
+           <div class="table-responsive">
+                <div class="panel panel-danger">
+                    <div class="panel-heading"></div>
+                     <div class="panel-body">
+                        <a href="{% url "raza-detail" p.id %}">
+                            <h3 class="panel-title">{{ p.raza }}</h3>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock maincontent %}
+
+ 

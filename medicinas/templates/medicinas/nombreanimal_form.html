@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block maincontent %}
+    <form enctype="multipart/form-data" method="post">{% csrf_token %}
+        <!--{{ form.as_p }}-->
+        <div>
+        <label for="name">Nombre Animal: </label>
+  
+        <input id="name" type="text" name="name" value="{{ object.name }}">
+        <br>
+        </div>
+        <button type="submit" class="btn btn-success">Save</button>
+        <a class='btn' href="{% url 'animal-list' %}">Cancel</a>
+    </form>
+{% endblock maincontent%}

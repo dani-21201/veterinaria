@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block maincontent %}
+    <form enctype="multipart/form-data" method="post">{% csrf_token %}
+         <!--{{ form.as_p }}-->
+        <div class="form-group">
+        <label for="Dueño">Nombre del Dueño: </label>
+  		<input class="form-control" id="Dueño" type="text" name="Dueño" value="{{ object.nombredueno }}">
+
+       <label for="direccion">Direccion: </label>
+      <input class="form-control" id="direccion" type="text" name="direccion" value="{{ object.direccion }}">
+
+       <label for="telefono">Telefono: </label>
+      <input class="form-control" id="telefono" type="text" name="telefono" value="{{ object.telefono }}">
+  	 	</div>
+  		
+     	<center>
+        <button type="submit" class="btn btn-success">Save</button>
+        <a class='btn' href="{% url 'raza-list' %}">Cancel</a>
+        </center>   
+    </form>
+{% endblock maincontent%}

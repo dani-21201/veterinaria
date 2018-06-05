@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block section %}
+<h1><p style="color:#614D24"; > <strong>Propietarios Mascotas</strogn></p></h1>
+    <hr>
+{% endblock section %}
+
+{% block maincontent %}
+    <div class="row well">
+        {% for p in object_list.all %}
+            <div class="table-responsive">
+                <div class="panel panel-basic">
+                                        
+                    <div class="panel-body">
+                        
+                        <a href="{% url "nombredueno-detail" p.id %}">
+                            <strong>
+                            <h1 style="color:#614D24"; class="panel-title">{{ p.Dueño }}</h1> </strong>
+                        </a>
+                    
+                    </div>
+                    
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock maincontent %}

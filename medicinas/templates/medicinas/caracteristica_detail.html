@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block section %}
+   <h2>
+       {{ object.title }}
+       {% if object.favorite %}
+              &#9733;
+       {% else %}
+              &#9734;
+       {% endif %}
+       {% if object.animal_id %}
+         ( <a href="{% url "animal-detail" object.animal_id %}">
+             {{ object.animal }}
+           </a> )
+       {% endif %}
+    </h2>
+   
+    <button type="button" class="btn btn-success"> <a href="{% url "caracteristica-update" object.id %}"> <p style="color:black;">Editar </p></a></button>
+    <button type="button" class="btn btn-danger"> <a href="{% url "caracteristica-delete" object.id %}"> <p style="color:black;">Eliminar </p></a></button>
+   <hr>
+{% endblock section %}
+
+{% block maincontent %}
+<div>
+ <div>
+     <img src="{% static object.photo.url %}" style="width:550px;height:420px" />
+ </div>
+</div>
+{% endblock maincontent %} 

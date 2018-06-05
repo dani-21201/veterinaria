@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block maincontent %}
+    <form enctype="multipart/form-data" method="post">{% csrf_token %}
+        <!--{{ form.as_p }}-->
+        <div class="form-group">
+        <label for="raza">Agregar Raza Animal: </label>
+  		<input class="form-control" id="raza" type="text" name="raza" value="{{ object.raza }}">
+     	</div>
+     	<center>
+        <button type="submit" class="btn btn-success">Save</button>
+        <a class='btn' href="{% url 'raza-list' %}">Cancel</a>
+        </center>
+    </form>
+{% endblock maincontent%}
+
+
+

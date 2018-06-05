@@ -1,0 +1,33 @@
+
+{% load i18n %}
+<strong><font face="Purisa">
+<br>
+<br>
+<center>
+{% block title %}{% trans "Logged out" %}{% endblock %}
+</center>
+
+{% block content %}
+<form method="post" action="">
+
+	<body style="background: -webkit-linear-gradient(red, blue); /* For Safari 5.1 to 6.0 */
+background: -o-linear-gradient(red, blue); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(red, blue); /* For Firefox 3.6 to 15 */
+background: linear-gradient(red, blue); /* Standard syntax */">
+</body>
+	<center>    {% csrf_token %}
+
+	
+    <p>{% trans "¿Volver a la pagina inicial?" %} <a href="{% url 'base' %}">
+    	<br>
+    {% trans "Inicia Sesion" %}</a>.</p>
+    </font>
+    {{ form.as_p }}
+    </center>
+
+  
+</form>
+
+
+
+{% endblock %}
